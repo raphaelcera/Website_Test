@@ -29,4 +29,7 @@ paste("This is the mean of 10 randomly generated numbers between 1-100:", mean_r
 
 ```
 
+```{r}
+
+```
 
