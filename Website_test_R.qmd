@@ -1,0 +1,32 @@
+---
+title: "Website_test_R"
+format: html
+editor: visual
+engine: knitr
+filters: 
+  - webr
+  - pyodide
+lang: en
+code-fold: true
+---
+
+```{r}
+#| label: load packages
+#| include: false
+
+library()
+
+```
+
+
+Run this code to calculate the mean of 10 randomly generated numbers
+
+```{webr-r}
+
+mean_random10 <- mean(sample(1:100, 10))
+paste("This is the mean of 10 randomly generated numbers between 1-100:", mean_random10)
+
+
+```
+
+
