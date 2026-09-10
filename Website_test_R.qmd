@@ -14,22 +14,46 @@ code-fold: true
 #| label: load packages
 #| include: false
 
-library()
+library(ggplot2)
 
 ```
 
-
-Run this code to calculate the mean of 10 randomly generated numbers
+First, we need to define the function
 
 ```{webr-r}
 
-mean_random10 <- mean(sample(1:100, 10))
-paste("This is the mean of 10 randomly generated numbers between 1-100:", mean_random10)
-
+replicate_means_function <- function(rep, n, interval){
+  df <- replicate(rep, mean(sample(interval, n, replace = TRUE)))
+  
+  return(hist(df))
+  
+}
 
 ```
 
-```{r}
+Run this code to generate n random numbers between x and y. 
+
+```{webr-r}
+
+#interval [x:y] to draw random numbers from
+interval <- c(1,10)
+
+#amount of random numbers randomly drawn from interval 
+n <- 15
+
+#number of times this is repeated (incl. mean calculation)
+rep <- 20
+
+
+replicate_means_function(rep, n,interval)
+
+```
+
+
+
+
+
+```{r webr-r histogram}
 
 ```
 
